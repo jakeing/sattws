@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - SATT Electric LLC | Get Your Free Estimate Today</title>
+    <meta name="description" content="Contact SATT Electric LLC for professional electrical services in Tennessee. Get your free estimate today. 24/7 emergency service available.">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="images/SATT logo.png" type="image/png">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #2d2d2d 100%);
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+        }
+
+        header.scrolled {
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 0.5rem 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            position: relative;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            flex: 0 0 auto;
+            position: absolute;
+            left: 0;
+        }
+
+        .logo-container img {
+            height: 50px;
+            width: auto;
+            margin-right: 15px;
+            border-radius: 8px;
+            background: rgba(255,255,255,0.1);
+            padding: 5px;
+        }
+
+        .logo-text {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+            white-space: nowrap;
+        }
+
+        .logo-text span {
+            color: #FFD700;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 0.7rem;
+            align-items: center;
+            margin-left: auto;
+            width: 100%;
+            justify-content: flex-end;
+            padding-right: 1rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 10px 15px;
+            border-radius: 5px;
+        }
+
+        .nav-links a:hover {
+            background: rgba(255, 215, 0, 0.2);
+            color: #FFD700;
+        }
+
+        .nav-links a.active {
+            background: rgba(255, 215, 0, 0.2);
+            color: #FFD700;
+        }
+
+        /* Dropdown Menu Styles */
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background: #000000;
+            min-width: 200px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.5);
+            border-radius: 8px;
+            top: 100%;
+            left: 0;
+            z-index: 1001;
+            border: 1px solid #FFD700;
+        }
+
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            transition: all 0.3s ease;
+        }
+
+        .dropdown-content a:hover {
+            background: rgba(255, 215, 0, 0.2);
+            color: #FFD700;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .mobile-menu span {
+            width: 25px;
+            height: 3px;
+            background: white;
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
+            color: white;
+            padding: 150px 0 80px;
+            text-align: center;
+        }
+
+        .page-title {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .page-subtitle {
+            font-size: 1.3rem;
+            color: #A0AEC0;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
+            color: white;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .contact-info h3 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: #F59E0B;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
+        .contact-icon {
+            font-size: 1.5rem;
+            color: #FFD700;
+        }
+
+        .contact-form {
+            background: rgba(255,255,255,0.1);
+            padding: 3rem;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #FFD700;
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 10px;
+            background: rgba(255,255,255,0.9);
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            background: white;
+            box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.3);
+        }
+
+        .submit-btn {
+            background: #FFD700;
+            color: #000000;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .submit-btn:hover {
+            background: #FFC107;
+            transform: translateY(-2px);
+        }
+
+        /* Map Section */
+        .map-section {
+            background: #FFFFFF;
+            padding: 80px 0;
+            border-top: 4px solid #FFD700;
+        }
+
+        .map-title {
+            font-size: 2.5rem;
+            color: #000000;
+            text-align: center;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .map-subtitle {
+            font-size: 1.2rem;
+            color: #718096;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .map-container {
+            width: 100%;
+            height: 450px;
+            margin-top: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        /* Footer */
+        footer {
+            background: #0F1419;
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            color: #FFD700;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: #A0AEC0;
+            text-decoration: none;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .footer-section a:hover {
+            color: #FFD700;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #2D3748;
+            color: #718096;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            color: #718096;
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: #FFD700;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .dropdown-content {
+                position: static;
+                display: none;
+                box-shadow: none;
+                border: none;
+                background: rgba(0,0,0,0.9);
+                border-radius: 0;
+            }
+
+            .dropdown.active .dropdown-content {
+                display: block;
+            }
+            
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: #000000;
+                flex-direction: column;
+                padding: 2rem;
+                box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .mobile-menu {
+                display: flex;
+            }
+
+            .page-title {
+                font-size: 2.5rem;
+            }
+
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Loading Animation */
+        .fade-in {
+            animation: fadeInUp 0.8s ease forwards;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <nav class="container">
+            <div class="logo-container">
+                <img src="images/SATT logo.png" alt="SATT Electric LLC Logo" onerror="this.style.display='none'">
+                <a href="index.html" class="logo-text">SATT Electric <span>LLC</span></a>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li class="dropdown">
+                    <a href="#industries">Industries</a>
+                    <div class="dropdown-content">
+                        <a href="industrial.html">Industrial</a>
+                        <a href="commercial.html">Commercial</a>
+                        <a href="institutional.html">Institutional</a>
+                    </div>
+                </li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="careers.html">Careers</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+            <div class="mobile-menu" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title">Get In Touch</h1>
+            <p class="page-subtitle">Ready to start your electrical project? Contact SATT Electric LLC today for a free consultation and estimate.</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-info fade-in">
+                    <h3>Contact Information</h3>
+                    <div class="contact-item">
+                        <span class="contact-icon">📞</span>
+                        <div>
+                            <div><strong>Phone:</strong> (423) 555-SATT</div>
+                            <div>Emergency Line: (423) 555-0911</div>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">📧</span>
+                        <div><strong>Email:</strong> info@sattelectric.com</div>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">📍</span>
+                        <div><strong>Address:</strong> 2256 Encompass Dr, Chattanooga, TN 37421</div>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">🕒</span>
+                        <div>
+                            <div><strong>Hours:</strong> Mon-Fri 7AM-6PM</div>
+                            <div><strong>Emergency:</strong> 24/7 Available</div>
+                        </div>
+                    </div>
+                    
+                    <h3 style="margin-top: 2rem;">Service Areas</h3>
+                    <p>We proudly serve residential, commercial, and industrial clients throughout Tennessee with prompt, professional electrical services.</p>
+                </div>
+                <div class="contact-form fade-in">
+                    <h3>Request Your Free Estimate</h3>
+                    <form id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First Name</label>
+                                <input type="text" id="firstName" name="firstName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Last Name</label>
+                                <input type="text" id="lastName" name="lastName" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone</label>
+                                <input type="tel" id="phone" name="phone" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="service">Service Needed</label>
+                            <select id="service" name="service" required>
+                                <option value="">Select a Service</option>
+                                <option value="residential">Residential Electrical</option>
+                                <option value="commercial">Commercial Electrical</option>
+                                <option value="industrial">Industrial Electrical</option>
+                                <option value="emergency">Emergency Repair</option>
+                                <option value="panel">Panel Upgrade</option>
+                                <option value="lighting">LED Lighting</option>
+                                <option value="inspection">Electrical Inspection</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Project Description</label>
+                            <textarea id="message" name="message" rows="4" placeholder="Tell us about your electrical project..." required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Send Request</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="container">
+            <h3 class="map-title">Our Location</h3>
+            <p class="map-subtitle">2256 Encompass Dr, Chattanooga, TN 37421</p>
+        </div>
+        <div class="map-container">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4363.20397969973!2d-85.19068051073474!3d35.052078157607994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x886063e02258f3d5%3A0xd507d8eb4559f355!2s2256%20Encompass%20Dr%2C%20Chattanooga%2C%20TN%2037421!5e0!3m2!1sen!2sus!4v1756214185412!5m2!1sen!2sus"
+                width="100%" 
+                height="450" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade"
+                title="SATT Electric LLC Location">
+            </iframe>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>SATT Electric LLC</h4>
+                    <p>Tennessee's premier electrical contractor providing safe, reliable, and professional electrical services to residential, commercial, and industrial clients.</p>
+                    <div class="social-links">
+                        <a href="#" title="Facebook">📘</a>
+                        <a href="#" title="LinkedIn">💼</a>
+                        <a href="#" title="Google Reviews">⭐</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <a href="services.html">Residential Electrical</a>
+                    <a href="services.html">Commercial Electrical</a>
+                    <a href="services.html">Industrial Electrical</a>
+                    <a href="services.html">Emergency Repairs</a>
+                    <a href="services.html">Panel Upgrades</a>
+                    <a href="services.html">LED Lighting</a>
+                    <a href="services.html">Electrical Inspections</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Industries</h4>
+                    <a href="industrial.html">Industrial</a>
+                    <a href="commercial.html">Commercial</a>
+                    <a href="institutional.html">Institutional</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>Phone: (423) 555-SATT</p>
+                    <p>Emergency: (423) 555-0911</p>
+                    <p>Email: info@sattelectric.com</p>
+                    <p>Careers: careers@sattelectric.com</p>
+                    <p>Address: 2256 Encompass Dr, Chattanooga, TN 37421</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 SATT Electric LLC. All rights reserved. | Licensed & Insured Electrical Contractor | Tennessee License #12345</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Contact form handling
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            // Simple form validation
+            if (!data.firstName || !data.lastName || !data.email || !data.phone || !data.service || !data.message) {
+                alert('Please fill in all required fields.');
+                return;
+            }
+            
+            // Email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(data.email)) {
+                alert('Please enter a valid email address.');
+                return;
+            }
+            
+            // Show success message
+            alert('Thank you for your request! We\'ll contact you within 24 hours with your free estimate.');
+            
+            // Reset form
+            this.reset();
+        });
+
+        // Fade in animation on scroll
+        function fadeInOnScroll() {
+            const elements = document.querySelectorAll('.fade-in');
+            
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.style.animationDelay = Math.random() * 0.3 + 's';
+                    element.classList.add('fade-in');
+                }
+            });
+        }
+
+        // Trigger fade in on load and scroll
+        window.addEventListener('load', fadeInOnScroll);
+        window.addEventListener('scroll', fadeInOnScroll);
+
+        // Initialize animations
+        document.addEventListener('DOMContentLoaded', function() {
+            fadeInOnScroll();
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(e) {
+            const nav = document.querySelector('.nav-links');
+            const mobileMenu = document.querySelector('.mobile-menu');
+            
+            if (!nav.contains(e.target) && !mobileMenu.contains(e.target)) {
+                nav.classList.remove('active');
+            }
+        });
+
+        // Mobile dropdown handling
+        document.addEventListener('click', function(e) {
+            if (window.innerWidth <= 768) {
+                const dropdown = e.target.closest('.dropdown');
+                if (dropdown) {
+                    e.preventDefault();
+                    dropdown.classList.toggle('active');
+                }
+            }
+        });
+    </script>
+</body>
+</html>
