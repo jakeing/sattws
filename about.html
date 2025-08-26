@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - SATT Electric LLC | Tennessee's Trusted Electrical Contractor</title>
+    <title>About Us - SATT Electric LLC | Tennessee's Trusted Electrical Contractors</title>
     <meta name="description" content="Learn about SATT Electric LLC, Tennessee's premier electrical contractor. Licensed, insured, and committed to safe, reliable electrical services since our founding.">
     
     <!-- Favicon -->
@@ -233,26 +233,15 @@
         }
 
         .about-image {
-            background: linear-gradient(135deg, #000000 0%, #2d2d2d 100%);
             height: 500px;
             border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 5rem;
-            position: relative;
             overflow: hidden;
         }
 
-        .about-image::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><circle cx="100" cy="100" r="3" fill="%23FFD700" opacity="0.3"/><circle cx="300" cy="200" r="2" fill="%23FFD700" opacity="0.4"/><circle cx="200" cy="300" r="4" fill="%23FFD700" opacity="0.2"/><circle cx="350" cy="150" r="2" fill="%23FFD700" opacity="0.5"/></svg>');
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         /* Values Section */
@@ -529,7 +518,7 @@
     <section class="page-header">
         <div class="container">
             <h1 class="page-title">About SATT Electric LLC</h1>
-            <p class="page-subtitle">Tennessee's trusted electrical contractor, committed to excellence in every project we undertake.</p>
+            <p class="page-subtitle">Tennessee's trusted electrical contractors, committed to excellence in every project we undertake.</p>
         </div>
     </section>
 
@@ -561,7 +550,7 @@
                     </div>
                 </div>
                 <div class="about-image fade-in">
-                    ⚡🔧⚡
+                    <img src="images/about-satt-electric-team.jpg" alt="SATT Electric LLC Team" style="width: 100%; height: 100%; object-fit: cover; border-radius: 20px;">
                 </div>
             </div>
         </div>
@@ -611,7 +600,7 @@
     <section class="cta-section">
         <div class="container">
             <h2 class="cta-title">Experience the SATT Electric LLC Difference</h2>
-            <p class="cta-text">Ready to work with Tennessee's most trusted electrical contractor?</p>
+            <p class="cta-text">Ready to work with Tennessee's most trusted electrical contractors?</p>
             <a href="contact.html" class="cta-button">Get Free Estimate</a>
             <a href="tel:+1234567890" class="cta-button cta-secondary">Call (423) 555-SATT</a>
         </div>
@@ -624,16 +613,18 @@
                 <div class="footer-section">
                     <h4>SATT Electric LLC</h4>
                     <p>Tennessee's premier electrical contractor providing safe, reliable, and professional electrical services to residential, commercial, and industrial clients.</p>
-
+                    <div class="social-links">
+                        <a href="#" title="Facebook">📘</a>
+                        <a href="#" title="LinkedIn">💼</a>
+                        <a href="#" title="Google Reviews">⭐</a>
+                    </div>
                 </div>
                 <div class="footer-section">
                     <h4>Services</h4>
-                    <a href="services.html">Residential Electrical</a>
                     <a href="services.html">Commercial Electrical</a>
                     <a href="services.html">Industrial Electrical</a>
                     <a href="services.html">Emergency Repairs</a>
                     <a href="services.html">Panel Upgrades</a>
-                    <a href="services.html">LED Lighting</a>
                     <a href="services.html">Electrical Inspections</a>
                 </div>
                 <div class="footer-section">

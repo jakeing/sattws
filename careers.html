@@ -240,32 +240,21 @@
         }
 
         .careers-image {
-            background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
             height: 400px;
             border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 4rem;
-            position: relative;
             overflow: hidden;
         }
 
-        .careers-image::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><circle cx="150" cy="150" r="3" fill="%23FFD700" opacity="0.4"/><circle cx="250" cy="100" r="2" fill="%23FFD700" opacity="0.3"/><circle cx="300" cy="250" r="4" fill="%23FFD700" opacity="0.2"/></svg>');
+        .careers-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
-        /* Benefits Section */
-        .benefits-section {
+        /* Why Work With Us Section */
+        .why-work-section {
             padding: 120px 0;
-            background: #FFFFFF;
+            background: linear-gradient(135deg, #F7FAFC 0%, #EDF2F7 100%);
         }
 
         .section-title {
@@ -284,52 +273,6 @@
             max-width: 600px;
             margin-left: auto;
             margin-right: auto;
-        }
-
-        .benefits-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2.5rem;
-            margin-top: 3rem;
-        }
-
-        .benefit-card {
-            background: white;
-            padding: 2.5rem 2rem;
-            border-radius: 15px;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-            transition: all 0.3s ease;
-            border: 1px solid #E2E8F0;
-        }
-
-        .benefit-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 50px rgba(0,0,0,0.12);
-        }
-
-        .benefit-icon {
-            font-size: 3rem;
-            margin-bottom: 1.5rem;
-            color: #FFD700;
-        }
-
-        .benefit-card h3 {
-            font-size: 1.4rem;
-            margin-bottom: 1rem;
-            color: #000000;
-            font-weight: 700;
-        }
-
-        .benefit-card p {
-            color: #718096;
-            line-height: 1.6;
-        }
-
-        /* Why Work With Us Section */
-        .why-work-section {
-            padding: 120px 0;
-            background: linear-gradient(135deg, #F7FAFC 0%, #EDF2F7 100%);
         }
 
         .work-reasons-grid {
@@ -522,7 +465,6 @@
                 grid-template-columns: 1fr;
             }
 
-            .benefits-grid,
             .work-reasons-grid {
                 grid-template-columns: 1fr;
             }
@@ -579,7 +521,7 @@
     <section class="page-header">
         <div class="container">
             <h1 class="page-title">Join Our Team</h1>
-            <p class="page-subtitle">Build your electrical career with Tennessee's premier electrical contractor.</p>
+            <p class="page-subtitle">Build your electrical career with Tennessee's premier electrical contractors.</p>
         </div>
     </section>
 
@@ -600,47 +542,7 @@
                     </div>
                 </div>
                 <div class="careers-image fade-in">
-                    👷‍♂️⚡🔧
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Benefits Section -->
-    <section class="benefits-section">
-        <div class="container">
-            <h2 class="section-title fade-in">Employee Benefits & Perks</h2>
-            <p class="section-subtitle fade-in">We take care of our team members with competitive benefits and a positive work environment.</p>
-            <div class="benefits-grid">
-                <div class="benefit-card fade-in">
-                    <div class="benefit-icon">💰</div>
-                    <h3>Competitive Compensation</h3>
-                    <p>Industry-leading wages with performance bonuses and regular pay reviews based on skills and experience.</p>
-                </div>
-                <div class="benefit-card fade-in">
-                    <div class="benefit-icon">🏥</div>
-                    <h3>Health Benefits</h3>
-                    <p>Comprehensive health insurance coverage including medical, dental, and vision for you and your family.</p>
-                </div>
-                <div class="benefit-card fade-in">
-                    <div class="benefit-icon">🏖️</div>
-                    <h3>Paid Time Off</h3>
-                    <p>Generous vacation time, sick leave, and paid holidays to maintain work-life balance and personal well-being.</p>
-                </div>
-                <div class="benefit-card fade-in">
-                    <div class="benefit-icon">📈</div>
-                    <h3>Career Growth</h3>
-                    <p>Clear advancement opportunities with support for continuing education, certifications, and skill development.</p>
-                </div>
-                <div class="benefit-card fade-in">
-                    <div class="benefit-icon">🚗</div>
-                    <h3>Company Vehicle</h3>
-                    <p>Fully equipped company vehicles with tools and equipment for qualified technicians and project leads.</p>
-                </div>
-                <div class="benefit-card fade-in">
-                    <div class="benefit-icon">🎓</div>
-                    <h3>Training Programs</h3>
-                    <p>Ongoing training in the latest electrical technologies, safety protocols, and industry best practices.</p>
+                    <img src="images/satt-electric-career-opportunities.jpg" alt="SATT Electric LLC Career Opportunities" style="width: 100%; height: 100%; object-fit: cover; border-radius: 20px;">
                 </div>
             </div>
         </div>
@@ -664,18 +566,6 @@
                     <h3><span class="work-reason-icon">👥</span>Team Environment</h3>
                     <p>Join a supportive team of skilled professionals who share knowledge, collaborate effectively, and support each other's success.</p>
                 </div>
-                <div class="work-reason fade-in">
-                    <h3><span class="work-reason-icon">🔧</span>Quality Tools</h3>
-                    <p>Work with top-quality tools and equipment, modern technology, and well-maintained vehicles to perform your best work safely and efficiently.</p>
-                </div>
-                <div class="work-reason fade-in">
-                    <h3><span class="work-reason-icon">🏆</span>Industry Leader</h3>
-                    <p>Build your reputation working for Tennessee's premier electrical contractor, known for quality work and professional excellence throughout the region.</p>
-                </div>
-                <div class="work-reason fade-in">
-                    <h3><span class="work-reason-icon">⚖️</span>Work-Life Balance</h3>
-                    <p>Enjoy reasonable schedules, flexible arrangements when possible, and a company culture that respects your time with family and personal interests.</p>
-                </div>
             </div>
         </div>
     </section>
@@ -697,16 +587,18 @@
                 <div class="footer-section">
                     <h4>SATT Electric LLC</h4>
                     <p>Tennessee's premier electrical contractor providing safe, reliable, and professional electrical services to residential, commercial, and industrial clients.</p>
-
+                    <div class="social-links">
+                        <a href="#" title="Facebook">📘</a>
+                        <a href="#" title="LinkedIn">💼</a>
+                        <a href="#" title="Google Reviews">⭐</a>
+                    </div>
                 </div>
                 <div class="footer-section">
                     <h4>Services</h4>
-                    <a href="services.html">Residential Electrical</a>
                     <a href="services.html">Commercial Electrical</a>
                     <a href="services.html">Industrial Electrical</a>
                     <a href="services.html">Emergency Repairs</a>
                     <a href="services.html">Panel Upgrades</a>
-                    <a href="services.html">LED Lighting</a>
                     <a href="services.html">Electrical Inspections</a>
                 </div>
                 <div class="footer-section">
