@@ -736,13 +736,14 @@
 
         /* Map Section */
         .map-section {
-            background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
+            background: #FFFFFF;
             padding: 60px 0;
+            border-top: 4px solid #FFD700;
         }
 
         .map-title {
             font-size: 2.5rem;
-            color: white;
+            color: #000000;
             text-align: center;
             margin-bottom: 0.5rem;
             font-weight: 700;
@@ -750,7 +751,7 @@
 
         .map-subtitle {
             font-size: 1.2rem;
-            color: #A0AEC0;
+            color: #718096;
             text-align: center;
             margin-bottom: 3rem;
         }
@@ -758,8 +759,10 @@
         .map-container {
             width: 100%;
             height: 450px;
-            border-top: 3px solid #FFD700;
             margin-top: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            overflow: hidden;
         }
 
         .map-container iframe {
