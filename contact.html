@@ -9,6 +9,9 @@
     <!-- Favicon -->
     <link rel="icon" href="images/SATT logo.png" type="image/png">
     
+    <!-- EmailJS SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    
     <style>
         * {
             margin: 0;
@@ -281,6 +284,38 @@
             transform: translateY(-2px);
         }
 
+        .submit-btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* Status Message */
+        .status-message {
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .status-message.success {
+            background: rgba(72, 187, 120, 0.2);
+            color: #48BB78;
+            border: 1px solid #48BB78;
+        }
+
+        .status-message.error {
+            background: rgba(245, 101, 101, 0.2);
+            color: #F56565;
+            border: 1px solid #F56565;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
         /* Map Section */
         .map-section {
             background: #FFFFFF;
@@ -549,7 +584,8 @@
                             <label for="message">Project Description</label>
                             <textarea id="message" name="message" rows="4" placeholder="Tell us about your electrical project..." required></textarea>
                         </div>
-                        <button type="submit" class="submit-btn">Send Request</button>
+                        <button type="submit" class="submit-btn" id="submitBtn">Send Request</button>
+                        <div id="statusMessage" class="status-message"></div>
                     </form>
                 </div>
             </div>
@@ -617,6 +653,11 @@
     </footer>
 
     <script>
+        // Initialize EmailJS with your public key
+        (function() {
+            emailjs.init('y-yppH-cfrV0fMx8v'); // Replace with your actual EmailJS public key
+        })();
+
         // Mobile Menu Toggle
         function toggleMobileMenu() {
             const navLinks = document.getElementById('navLinks');
@@ -633,33 +674,64 @@
             }
         });
 
-        // Contact form handling
+        // Contact form handling with EmailJS
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
-            // Get form data
+            const submitBtn = document.getElementById('submitBtn');
+            const statusMessage = document.getElementById('statusMessage');
             const formData = new FormData(this);
             const data = Object.fromEntries(formData);
             
-            // Simple form validation
+            // Client-side validation
             if (!data.firstName || !data.lastName || !data.email || !data.phone || !data.service || !data.message) {
-                alert('Please fill in all required fields.');
+                showStatusMessage('Please fill in all required fields.', 'error');
                 return;
             }
             
             // Email validation
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             if (!emailRegex.test(data.email)) {
-                alert('Please enter a valid email address.');
+                showStatusMessage('Please enter a valid email address.', 'error');
                 return;
             }
             
-            // Show success message
-            alert('Thank you for your request! We\'ll contact you within 24 hours with your free estimate.');
+            // Show loading state
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending...';
+            statusMessage.style.display = 'none';
             
-            // Reset form
-            this.reset();
+            // Send email using EmailJS
+            emailjs.sendForm('service_z9095xc', 'template_504f7k4', this)
+                .then(function(response) {
+                    console.log('SUCCESS!', response.status, response.text);
+                    showStatusMessage('Thank you for your request! We\'ll contact you within 24 hours with your free estimate.', 'success');
+                    document.getElementById('contactForm').reset();
+                }, function(error) {
+                    console.log('FAILED...', error);
+                    showStatusMessage('Sorry, there was an error sending your message. Please try again or call us directly at (423) 555-SATT.', 'error');
+                })
+                .finally(function() {
+                    // Reset button state
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Send Request';
+                });
         });
+
+        // Show status message function
+        function showStatusMessage(message, type) {
+            const statusMessage = document.getElementById('statusMessage');
+            statusMessage.textContent = message;
+            statusMessage.className = `status-message ${type}`;
+            statusMessage.style.display = 'block';
+            
+            // Auto-hide success messages after 5 seconds
+            if (type === 'success') {
+                setTimeout(() => {
+                    statusMessage.style.display = 'none';
+                }, 5000);
+            }
+        }
 
         // Fade in animation on scroll
         function fadeInOnScroll() {
