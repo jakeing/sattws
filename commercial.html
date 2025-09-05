@@ -567,38 +567,239 @@
                 transform: translateY(0);
             }
         }
+
+        /* Mobile Menu Button */
+        .mobile-menu-btn {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            padding: 8px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            z-index: 1001;
+        }
+
+        .mobile-menu-btn:hover {
+            background: rgba(255, 215, 0, 0.2);
+        }
+
+        .mobile-menu-btn span {
+            width: 25px;
+            height: 3px;
+            background: white;
+            margin: 3px 0;
+            transition: all 0.3s ease;
+            border-radius: 2px;
+        }
+
+        /* Mobile Menu Animation */
+        .mobile-menu-btn.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .mobile-menu-btn.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-menu-btn.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -6px);
+        }
+
+        /* Mobile Navigation Overlay */
+        .mobile-nav-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-nav-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Mobile Navigation Menu */
+        .mobile-nav {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 280px;
+            height: 100vh;
+            background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            padding: 80px 20px 20px;
+            overflow-y: auto;
+        }
+
+        .mobile-nav.active {
+            right: 0;
+        }
+
+        .mobile-nav-links {
+            list-style: none;
+            padding: 0;
+        }
+
+        .mobile-nav-links li {
+            margin-bottom: 8px;
+        }
+
+        .mobile-nav-links > li > a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 15px 20px;
+            font-size: 1.1rem;
+            font-weight: 500;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            border-left: 3px solid transparent;
+        }
+
+        .mobile-nav-links > li > a:hover {
+            background: rgba(255, 215, 0, 0.2);
+            color: #FFD700;
+            border-left-color: #FFD700;
+        }
+
+        /* Mobile Dropdown */
+        .mobile-dropdown {
+            position: relative;
+        }
+
+        .mobile-dropdown-toggle {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .mobile-dropdown-toggle::after {
+            content: '▼';
+            font-size: 0.8rem;
+            transition: transform 0.3s ease;
+        }
+
+        .mobile-dropdown.active .mobile-dropdown-toggle::after {
+            transform: rotate(180deg);
+        }
+
+        .mobile-dropdown-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            margin-top: 8px;
+        }
+
+        .mobile-dropdown.active .mobile-dropdown-content {
+            max-height: 200px;
+        }
+
+        .mobile-dropdown-content a {
+            display: block;
+            color: #A0AEC0;
+            text-decoration: none;
+            padding: 12px 20px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            border-left: 3px solid transparent;
+        }
+
+        .mobile-dropdown-content a:hover {
+            color: #FFD700;
+            background: rgba(255, 215, 0, 0.1);
+            border-left-color: #FFD700;
+        }
+
+        /* Update mobile responsive section */
+        @media (max-width: 768px) {
+            /* Hide desktop navigation */
+            .nav-links {
+                display: none !important;
+            }
+
+            /* Show mobile menu button */
+            .mobile-menu-btn {
+                display: flex;
+            }
+
+            /* Mobile Header Adjustments */
+            .logo-container img {
+                height: 35px;
+                margin-right: 8px;
+            }
+
+            .logo-text {
+                font-size: 1.3rem;
+            }
+        }
+
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <header id="header">
-        <nav class="container">
-            <div class="logo-container">
-                <img src="images/SATT logo.png" alt="SATT Electric LLC Logo" onerror="this.style.display='none'">
-                <a href="index.html" class="logo-text">SATT Electric <span>LLC</span></a>
+<!-- Mobile Navigation Overlay -->
+<div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
+
+<!-- Header -->
+<header id="header">
+    <nav class="container">
+        <div class="logo-container">
+            <img src="images/SATT logo.png" alt="SATT Electric LLC Logo" onerror="this.style.display='none'">
+            <a href="index.html" class="logo-text">SATT Electric <span>LLC</span></a>
+        </div>
+        
+        <!-- Desktop Navigation -->
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li class="dropdown">
+                <a href="#industries">Industries</a>
+                <div class="dropdown-content">
+                    <a href="industrial.html">Industrial</a>
+                    <a href="commercial.html">Commercial</a>
+                    <a href="institutional.html">Institutional</a>
+                </div>
+            </li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="careers.html">Careers</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+        <!-- Mobile Menu Button -->
+        <div class="mobile-menu-btn" id="mobileMenuBtn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+</header>
+
+<!-- Mobile Navigation Menu -->
+<nav class="mobile-nav" id="mobileNav">
+    <ul class="mobile-nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li class="mobile-dropdown">
+            <a href="#industries" class="mobile-dropdown-toggle">Industries</a>
+            <div class="mobile-dropdown-content">
+                <a href="industrial.html">Industrial</a>
+                <a href="commercial.html">Commercial</a>
+                <a href="institutional.html">Institutional</a>
             </div>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li class="dropdown">
-                    <a href="#industries" class="active">Industries</a>
-                    <div class="dropdown-content">
-                        <a href="industrial.html">Industrial</a>
-                        <a href="commercial.html" class="active">Commercial</a>
-                        <a href="institutional.html">Institutional</a>
-                    </div>
-                </li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="careers.html">Careers</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-            <div class="mobile-menu" onclick="toggleMobileMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </nav>
-    </header>
+        </li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="careers.html">Careers</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</nav>
 
     <!-- Page Header -->
     <section class="page-header">
@@ -874,6 +1075,51 @@
                 }
             }
         });
+
+        // Mobile Menu Functionality
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileNav = document.getElementById('mobileNav');
+        const mobileNavOverlay = document.getElementById('mobileNavOverlay');
+
+        function toggleMobileMenu() {
+            mobileMenuBtn.classList.toggle('active');
+            mobileNav.classList.toggle('active');
+            mobileNavOverlay.classList.toggle('active');
+            document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+        }
+
+        function closeMobileMenu() {
+            mobileMenuBtn.classList.remove('active');
+            mobileNav.classList.remove('active');
+            mobileNavOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // Event listeners
+        mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+        mobileNavOverlay.addEventListener('click', closeMobileMenu);
+
+        // Mobile dropdown functionality
+        document.querySelectorAll('.mobile-dropdown-toggle').forEach(toggle => {
+            toggle.addEventListener('click', function(e) {
+                e.preventDefault();
+                const dropdown = this.closest('.mobile-dropdown');
+                dropdown.classList.toggle('active');
+            });
+        });
+
+        // Close mobile menu on window resize
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 768) {
+                closeMobileMenu();
+            }
+        });
+
+        // Update your existing mobile menu toggle function if you have one
+        function toggleMobileMenu() {
+            toggleMobileMenu(); // Use the new function above
+        }
+
     </script>
 </body>
 </html>
