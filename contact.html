@@ -31,20 +31,19 @@
 
         /* Header & Navigation */
         header {
-            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 50%, #e9ecef 100%);
-            color: #2d3748;
+            background: linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #2d2d2d 100%);
+            color: white;
             padding: 1rem 0;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
             transition: all 0.3s ease;
-            border-bottom: 3px solid #FFD700;
         }
 
         header.scrolled {
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(0, 0, 0, 0.95);
             backdrop-filter: blur(10px);
             padding: 0.75rem 0;
         }
@@ -67,12 +66,14 @@
             width: auto;
             margin-right: 15px;
             border-radius: 8px;
+            background: rgba(255,255,255,0.1);
+            padding: 5px;
         }
 
         .logo-text {
             font-size: 1.8rem;
             font-weight: bold;
-            color: #2d3748;
+            color: white;
             text-decoration: none;
             white-space: nowrap;
         }
@@ -89,7 +90,7 @@
         }
 
         .nav-links a {
-            color: #2d3748;
+            color: white;
             text-decoration: none;
             font-weight: 500;
             transition: all 0.3s ease;
@@ -99,12 +100,12 @@
 
         .nav-links a:hover {
             background: rgba(255, 215, 0, 0.2);
-            color: #B7791F;
+            color: #FFD700;
         }
 
         .nav-links a.active {
             background: rgba(255, 215, 0, 0.2);
-            color: #B7791F;
+            color: #FFD700;
         }
 
         /* Dropdown Menu Styles */
@@ -115,9 +116,9 @@
         .dropdown-content {
             display: none;
             position: absolute;
-            background: #ffffff;
+            background: #000000;
             min-width: 200px;
-            box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.5);
             border-radius: 8px;
             top: 100%;
             left: 0;
@@ -126,7 +127,7 @@
         }
 
         .dropdown-content a {
-            color: #2d3748;
+            color: white;
             padding: 12px 16px;
             text-decoration: none;
             display: block;
@@ -135,7 +136,7 @@
 
         .dropdown-content a:hover {
             background: rgba(255, 215, 0, 0.2);
-            color: #B7791F;
+            color: #FFD700;
         }
 
         .dropdown:hover .dropdown-content {
@@ -161,7 +162,7 @@
         .mobile-menu-btn span {
             width: 25px;
             height: 3px;
-            background: #2d3748;
+            background: white;
             margin: 3px 0;
             transition: all 0.3s ease;
             border-radius: 2px;
@@ -205,7 +206,7 @@
             right: -100%;
             width: 280px;
             height: 100vh;
-            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
             z-index: 1000;
             transition: all 0.3s ease;
             padding: 80px 20px 20px;
@@ -227,7 +228,7 @@
 
         .mobile-nav-links > li > a {
             display: block;
-            color: #2d3748;
+            color: white;
             text-decoration: none;
             padding: 15px 20px;
             font-size: 1.1rem;
@@ -240,7 +241,7 @@
         .mobile-nav-links > li > a:hover,
         .mobile-nav-links > li > a.active {
             background: rgba(255, 215, 0, 0.2);
-            color: #B7791F;
+            color: #FFD700;
             border-left-color: #FFD700;
         }
 
@@ -269,7 +270,7 @@
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.3s ease;
-            background: rgba(255, 215, 0, 0.05);
+            background: rgba(255, 255, 255, 0.05);
             border-radius: 8px;
             margin-top: 8px;
         }
@@ -280,7 +281,7 @@
 
         .mobile-dropdown-content a {
             display: block;
-            color: #4A5568;
+            color: #A0AEC0;
             text-decoration: none;
             padding: 12px 20px;
             font-size: 1rem;
@@ -289,7 +290,7 @@
         }
 
         .mobile-dropdown-content a:hover {
-            color: #B7791F;
+            color: #FFD700;
             background: rgba(255, 215, 0, 0.1);
             border-left-color: #FFD700;
         }
@@ -330,22 +331,20 @@
         }
 
         .contact-info {
-            background: rgba(255,255,255,0.95);
-            color: #2d3748;
+            background: rgba(255,255,255,0.1);
             padding: 4rem;
             border-radius: 20px;
             backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,215,0,0.3);
+            border: 1px solid rgba(255,255,255,0.1);
             max-width: 800px;
             width: 100%;
             text-align: center;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
         }
 
         .contact-info h3 {
             font-size: 2.5rem;
             margin-bottom: 3rem;
-            color: #B7791F;
+            color: #F59E0B;
         }
 
         .contact-items-grid {
@@ -361,15 +360,14 @@
             gap: 15px;
             font-size: 1.1rem;
             padding: 1.5rem;
-            background: rgba(255,215,0,0.05);
+            background: rgba(255,255,255,0.05);
             border-radius: 15px;
             transition: all 0.3s ease;
         }
 
         .contact-item:hover {
-            background: rgba(255,215,0,0.1);
+            background: rgba(255,255,255,0.1);
             transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
         }
 
         .contact-icon {
@@ -383,7 +381,7 @@
         }
 
         .service-areas {
-            background: rgba(255,215,0,0.05);
+            background: rgba(255,255,255,0.05);
             padding: 2rem;
             border-radius: 15px;
             margin-top: 2rem;
@@ -391,14 +389,13 @@
 
         .service-areas h4 {
             font-size: 1.5rem;
-            color: #B7791F;
+            color: #FFD700;
             margin-bottom: 1rem;
         }
 
         .service-areas p {
             font-size: 1.1rem;
             line-height: 1.8;
-            color: #4A5568;
         }
 
         /* Map Section */
@@ -410,7 +407,7 @@
 
         .map-title {
             font-size: 2.5rem;
-            color: #2d3748;
+            color: #000000;
             text-align: center;
             margin-bottom: 0.5rem;
             font-weight: 700;
@@ -440,7 +437,7 @@
 
         /* Footer */
         footer {
-            background: #2d3748;
+            background: #0F1419;
             color: white;
             padding: 60px 0 30px;
         }
@@ -473,7 +470,7 @@
         .footer-bottom {
             text-align: center;
             padding-top: 2rem;
-            border-top: 1px solid #4A5568;
+            border-top: 1px solid #2D3748;
             color: #718096;
         }
 
