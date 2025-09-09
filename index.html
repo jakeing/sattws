@@ -7,7 +7,7 @@
     <meta name="description" content="SATT Electric LLC provides professional electrical services throughout Tennessee. Licensed, insured, and experienced electricians for commercial and industrial projects.">
     
     <!-- Favicon -->
-    <link rel="icon" href="images/SATT logo.png" type="image/png">
+    <link rel="icon" href="images/SATT logo.jpg" type="image/jpg">
     
     <style>
         * {
@@ -31,19 +31,20 @@
 
         /* Header & Navigation */
         header {
-            background: linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #2d2d2d 100%);
-            color: white;
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 50%, #e9ecef 100%);
+            color: #2d3748;
             padding: 1rem 0;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
             transition: all 0.3s ease;
+            border-bottom: 3px solid #FFD700;
         }
 
         header.scrolled {
-            background: rgba(0, 0, 0, 0.95);
+            background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
             padding: 0.75rem 0;
         }
@@ -67,14 +68,14 @@
             width: auto;
             margin-right: 10px;
             border-radius: 6px;
-            background: rgba(255,255,255,0.1);
+            background: rgba(255,215,0,0.1);
             padding: 4px;
         }
 
         .logo-text {
             font-size: 1.5rem;
             font-weight: bold;
-            color: white;
+            color: #2d3748;
             text-decoration: none;
             white-space: nowrap;
         }
@@ -92,7 +93,7 @@
         }
 
         .nav-links a {
-            color: white;
+            color: #2d3748;
             text-decoration: none;
             font-weight: 500;
             transition: all 0.3s ease;
@@ -102,7 +103,7 @@
 
         .nav-links a:hover {
             background: rgba(255, 215, 0, 0.2);
-            color: #FFD700;
+            color: #B7791F;
         }
 
         /* Dropdown Menu Styles */
@@ -113,9 +114,9 @@
         .dropdown-content {
             display: none;
             position: absolute;
-            background: #000000;
+            background: #ffffff;
             min-width: 200px;
-            box-shadow: 0 8px 16px rgba(0,0,0,0.5);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.15);
             border-radius: 8px;
             top: 100%;
             left: 0;
@@ -124,7 +125,7 @@
         }
 
         .dropdown-content a {
-            color: white;
+            color: #2d3748;
             padding: 12px 16px;
             text-decoration: none;
             display: block;
@@ -133,7 +134,7 @@
 
         .dropdown-content a:hover {
             background: rgba(255, 215, 0, 0.2);
-            color: #FFD700;
+            color: #B7791F;
         }
 
         .dropdown:hover .dropdown-content {
@@ -158,7 +159,7 @@
         .mobile-menu-btn span {
             width: 25px;
             height: 3px;
-            background: white;
+            background: #2d3748;
             margin: 3px 0;
             transition: all 0.3s ease;
             border-radius: 2px;
@@ -203,7 +204,7 @@
             right: -100%;
             width: 280px;
             height: 100vh;
-            background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
             z-index: 1000;
             transition: all 0.3s ease;
             padding: 80px 20px 20px;
@@ -225,7 +226,7 @@
 
         .mobile-nav-links > li > a {
             display: block;
-            color: white;
+            color: #2d3748;
             text-decoration: none;
             padding: 15px 20px;
             font-size: 1.1rem;
@@ -237,7 +238,7 @@
 
         .mobile-nav-links > li > a:hover {
             background: rgba(255, 215, 0, 0.2);
-            color: #FFD700;
+            color: #B7791F;
             border-left-color: #FFD700;
         }
 
@@ -266,7 +267,7 @@
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.3s ease;
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(255, 215, 0, 0.05);
             border-radius: 8px;
             margin-top: 8px;
         }
@@ -277,7 +278,7 @@
 
         .mobile-dropdown-content a {
             display: block;
-            color: #A0AEC0;
+            color: #4A5568;
             text-decoration: none;
             padding: 12px 20px;
             font-size: 1rem;
@@ -286,7 +287,7 @@
         }
 
         .mobile-dropdown-content a:hover {
-            color: #FFD700;
+            color: #B7791F;
             background: rgba(255, 215, 0, 0.1);
             border-left-color: #FFD700;
         }
@@ -336,7 +337,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(26, 26, 26, 0.6) 50%, rgba(45, 45, 45, 0.7) 100%);
+            background: linear-gradient(135deg, rgba(45, 55, 72, 0.8) 0%, rgba(26, 32, 44, 0.7) 50%, rgba(45, 55, 72, 0.8) 100%);
             z-index: 2;
         }
 
@@ -345,8 +346,8 @@
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            background: rgba(0, 0, 0, 0.5);
-            color: #FFD700;
+            background: rgba(255, 255, 255, 0.9);
+            color: #B7791F;
             border: 2px solid #FFD700;
             width: 60px;
             height: 60px;
@@ -363,9 +364,9 @@
         }
 
         .carousel-nav:hover {
-            background: rgba(255, 215, 0, 0.2);
+            background: rgba(255, 215, 0, 0.9);
             border-color: #FFC107;
-            color: #FFC107;
+            color: #2d3748;
             transform: translateY(-50%) scale(1.1);
         }
 
@@ -414,7 +415,7 @@
         .cta-button {
             display: inline-block;
             background: #FFD700;
-            color: #000000;
+            color: #2d3748;
             padding: 18px 35px;
             text-decoration: none;
             border-radius: 50px;
@@ -431,15 +432,15 @@
         }
 
         .cta-secondary {
-            background: rgba(255,255,255,0.1);
-            color: white;
-            border: 2px solid rgba(255,255,255,0.3);
+            background: rgba(255,255,255,0.9);
+            color: #2d3748;
+            border: 2px solid rgba(255,255,255,0.8);
         }
 
         .cta-secondary:hover {
-            background: rgba(255,255,255,0.2);
-            color: white;
-            border-color: rgba(255,255,255,0.5);
+            background: rgba(255,255,255,1);
+            color: #2d3748;
+            border-color: #FFD700;
         }
 
         /* Trust Indicators */
@@ -481,7 +482,7 @@
             text-align: center;
             font-size: 3rem;
             margin-bottom: 1rem;
-            color: #000000;
+            color: #2d3748;
             font-weight: 700;
         }
 
@@ -508,18 +509,18 @@
         }
 
         .testimonial-author {
-            color: #000000;
+            color: #2d3748;
             font-weight: bold;
         }
 
         .testimonial-company {
-            color: #FFD700;
+            color: #B7791F;
             font-size: 0.9rem;
         }
 
         /* Footer */
         footer {
-            background: #0F1419;
+            background: #2d3748;
             color: white;
             padding: 60px 0 30px;
         }
@@ -552,7 +553,7 @@
         .footer-bottom {
             text-align: center;
             padding-top: 2rem;
-            border-top: 1px solid #2D3748;
+            border-top: 1px solid #4A5568;
             color: #718096;
         }
 
@@ -768,7 +769,7 @@
     <header id="header">
         <nav class="container">
             <div class="logo-container">
-                <img src="images/SATT logo.png" alt="SATT Electric LLC Logo" onerror="this.style.display='none'">
+                <img src="images/SATT logo.jpg" alt="SATT Electric LLC Logo" onerror="this.style.display='none'">
                 <a href="index.html" class="logo-text">SATT Electric <span>LLC</span></a>
             </div>
 
