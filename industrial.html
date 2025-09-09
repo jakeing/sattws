@@ -31,19 +31,20 @@
 
         /* Header & Navigation */
         header {
-            background: linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #2d2d2d 100%);
-            color: white;
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 50%, #e9ecef 100%);
+            color: #2d3748;
             padding: 1rem 0;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
             transition: all 0.3s ease;
+            border-bottom: 3px solid #FFD700;
         }
 
         header.scrolled {
-            background: rgba(0, 0, 0, 0.95);
+            background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
             padding: 0.75rem 0;
         }
@@ -66,14 +67,14 @@
             width: auto;
             margin-right: 15px;
             border-radius: 8px;
-            background: rgba(255,255,255,0.1);
+            background: rgba(255,215,0,0.1);
             padding: 5px;
         }
 
         .logo-text {
             font-size: 1.8rem;
             font-weight: bold;
-            color: white;
+            color: #2d3748;
             text-decoration: none;
             white-space: nowrap;
         }
@@ -90,7 +91,7 @@
         }
 
         .nav-links a {
-            color: white;
+            color: #2d3748;
             text-decoration: none;
             font-weight: 500;
             transition: all 0.3s ease;
@@ -100,12 +101,12 @@
 
         .nav-links a:hover {
             background: rgba(255, 215, 0, 0.2);
-            color: #FFD700;
+            color: #B7791F;
         }
 
         .nav-links a.active {
             background: rgba(255, 215, 0, 0.2);
-            color: #FFD700;
+            color: #B7791F;
         }
 
         /* Dropdown Menu Styles */
@@ -116,9 +117,9 @@
         .dropdown-content {
             display: none;
             position: absolute;
-            background: #000000;
+            background: #ffffff;
             min-width: 200px;
-            box-shadow: 0 8px 16px rgba(0,0,0,0.5);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.15);
             border-radius: 8px;
             top: 100%;
             left: 0;
@@ -127,7 +128,7 @@
         }
 
         .dropdown-content a {
-            color: white;
+            color: #2d3748;
             padding: 12px 16px;
             text-decoration: none;
             display: block;
@@ -136,12 +137,12 @@
 
         .dropdown-content a:hover {
             background: rgba(255, 215, 0, 0.2);
-            color: #FFD700;
+            color: #B7791F;
         }
 
         .dropdown-content a.active {
             background: rgba(255, 215, 0, 0.2);
-            color: #FFD700;
+            color: #B7791F;
         }
 
         .dropdown:hover .dropdown-content {
@@ -167,7 +168,7 @@
         .mobile-menu-btn span {
             width: 25px;
             height: 3px;
-            background: white;
+            background: #2d3748;
             margin: 3px 0;
             transition: all 0.3s ease;
             border-radius: 2px;
@@ -211,7 +212,7 @@
             right: -100%;
             width: 280px;
             height: 100vh;
-            background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
             z-index: 1000;
             transition: all 0.3s ease;
             padding: 80px 20px 20px;
@@ -233,7 +234,7 @@
 
         .mobile-nav-links > li > a {
             display: block;
-            color: white;
+            color: #2d3748;
             text-decoration: none;
             padding: 15px 20px;
             font-size: 1.1rem;
@@ -246,7 +247,7 @@
         .mobile-nav-links > li > a:hover,
         .mobile-nav-links > li > a.active {
             background: rgba(255, 215, 0, 0.2);
-            color: #FFD700;
+            color: #B7791F;
             border-left-color: #FFD700;
         }
 
@@ -275,7 +276,7 @@
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.3s ease;
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(255, 215, 0, 0.05);
             border-radius: 8px;
             margin-top: 8px;
         }
@@ -286,7 +287,7 @@
 
         .mobile-dropdown-content a {
             display: block;
-            color: #A0AEC0;
+            color: #4A5568;
             text-decoration: none;
             padding: 12px 20px;
             font-size: 1rem;
@@ -295,7 +296,7 @@
         }
 
         .mobile-dropdown-content a:hover {
-            color: #FFD700;
+            color: #B7791F;
             background: rgba(255, 215, 0, 0.1);
             border-left-color: #FFD700;
         }
@@ -336,14 +337,14 @@
 
         .industry-text h2 {
             font-size: 2.8rem;
-            color: #000000;
+            color: #2d3748;
             margin-bottom: 1rem;
             font-weight: 700;
         }
 
         .industry-text .industry-tagline {
             font-size: 1.2rem;
-            color: #686100;
+            color: #B7791F;
             margin-bottom: 2rem;
             font-weight: 600;
             text-transform: uppercase;
@@ -357,15 +358,8 @@
         }
 
         .industry-image {
-            background: linear-gradient(135deg, #000000 0%, #2d2d2d 100%);
             height: 400px;
             border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 5rem;
-            position: relative;
             overflow: hidden;
         }
 
@@ -373,16 +367,6 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-        }
-
-        .industry-image::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><circle cx="100" cy="100" r="3" fill="%23FFD700" opacity="0.3"/><circle cx="300" cy="200" r="2" fill="%23FFD700" opacity="0.4"/><circle cx="200" cy="300" r="4" fill="%23FFD700" opacity="0.2"/><circle cx="350" cy="150" r="2" fill="%23FFD700" opacity="0.5"/></svg>');
         }
 
         /* Services Section */
@@ -395,7 +379,7 @@
             text-align: center;
             font-size: 3rem;
             margin-bottom: 1rem;
-            color: #000000;
+            color: #2d3748;
             font-weight: 700;
         }
 
@@ -434,7 +418,7 @@
         .service-card h3 {
             font-size: 1.4rem;
             margin-bottom: 1rem;
-            color: #000000;
+            color: #2d3748;
             font-weight: 700;
             display: flex;
             align-items: center;
@@ -488,7 +472,7 @@
         .capability-content h4 {
             font-size: 1.2rem;
             margin-bottom: 0.5rem;
-            color: #000000;
+            color: #2d3748;
             font-weight: 600;
         }
 
@@ -521,7 +505,7 @@
         .cta-button {
             display: inline-block;
             background: #FFD700;
-            color: #000000;
+            color: #2d3748;
             padding: 18px 35px;
             text-decoration: none;
             border-radius: 50px;
@@ -552,7 +536,7 @@
 
         /* Footer */
         footer {
-            background: #0F1419;
+            background: #2d3748;
             color: white;
             padding: 60px 0 30px;
         }
@@ -585,7 +569,7 @@
         .footer-bottom {
             text-align: center;
             padding-top: 2rem;
-            border-top: 1px solid #2D3748;
+            border-top: 1px solid #4A5568;
             color: #718096;
         }
 
@@ -849,7 +833,7 @@
             <h2 class="cta-title">Ready to Power Your Industrial Operation?</h2>
             <p class="cta-text">Contact us today to discuss your industrial electrical project and get expert consultation.</p>
             <a href="contact.html" class="cta-button">Get Industrial Quote</a>
-            <a href="tel:+1234567890" class="cta-button cta-secondary">Call (423) 555-SATT</a>
+            <a href="tel:+1234567890" class="cta-button cta-secondary">Call (423) 314-7859</a>
         </div>
     </section>
 
@@ -859,12 +843,11 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <h4>SATT Electric LLC</h4>
-                    <p>Tennessee's premier electrical contractor providing safe, reliable, and professional electrical services to residential, commercial, and industrial clients.</p>
+                    <p>Tennessee's premier electrical contractor providing safe, reliable, and professional electrical services to commercial and industrial clients.</p>
 
                 </div>
                 <div class="footer-section">
                     <h4>Services</h4>
-                    <a href="services.html">Residential Electrical</a>
                     <a href="services.html">Commercial Electrical</a>
                     <a href="services.html">Industrial Electrical</a>
                     <a href="services.html">Emergency Repairs</a>
@@ -880,15 +863,13 @@
                 </div>
                 <div class="footer-section">
                     <h4>Contact</h4>
-                    <p>Phone: (423) 555-SATT</p>
-                    <p>Emergency: (423) 555-0911</p>
-                    <p>Email: info@sattelectric.com</p>
-                    <p>Careers: careers@sattelectric.com</p>
-                    <p>Address: 2256 Encompass Dr, Chattanooga, TN 37421</p>
+                    <p>Phone: (423) 314-7859</p>
+                    <p>Emergency: (423) 314-7859</p>
+                    <p>Address: 2256 Encompass Dr Suite B, Chattanooga, TN 37421</p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 SATT Electric LLC. All rights reserved. | Licensed & Insured Electrical Contractor | Tennessee License #12345</p>
+                <p>&copy; 2025 SATT Electric LLC. All rights reserved. | Licensed & Insured Electrical Contractor</p>
             </div>
         </div>
     </footer>

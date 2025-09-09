@@ -31,19 +31,20 @@
 
         /* Header & Navigation */
         header {
-            background: linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #2d2d2d 100%);
-            color: white;
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 50%, #e9ecef 100%);
+            color: #2d3748;
             padding: 1rem 0;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
             transition: all 0.3s ease;
+            border-bottom: 3px solid #FFD700;
         }
 
         header.scrolled {
-            background: rgba(0, 0, 0, 0.95);
+            background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
             padding: 0.75rem 0;
         }
@@ -66,14 +67,14 @@
             width: auto;
             margin-right: 15px;
             border-radius: 8px;
-            background: rgba(255,255,255,0.1);
+            background: rgba(255,215,0,0.1);
             padding: 5px;
         }
 
         .logo-text {
             font-size: 1.8rem;
             font-weight: bold;
-            color: white;
+            color: #2d3748;
             text-decoration: none;
             white-space: nowrap;
         }
@@ -90,7 +91,7 @@
         }
 
         .nav-links a {
-            color: white;
+            color: #2d3748;
             text-decoration: none;
             font-weight: 500;
             transition: all 0.3s ease;
@@ -100,12 +101,12 @@
 
         .nav-links a:hover {
             background: rgba(255, 215, 0, 0.2);
-            color: #FFD700;
+            color: #B7791F;
         }
 
         .nav-links a.active {
             background: rgba(255, 215, 0, 0.2);
-            color: #FFD700;
+            color: #B7791F;
         }
 
         /* Dropdown Menu Styles */
@@ -116,9 +117,9 @@
         .dropdown-content {
             display: none;
             position: absolute;
-            background: #000000;
+            background: #ffffff;
             min-width: 200px;
-            box-shadow: 0 8px 16px rgba(0,0,0,0.5);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.15);
             border-radius: 8px;
             top: 100%;
             left: 0;
@@ -127,7 +128,7 @@
         }
 
         .dropdown-content a {
-            color: white;
+            color: #2d3748;
             padding: 12px 16px;
             text-decoration: none;
             display: block;
@@ -136,7 +137,7 @@
 
         .dropdown-content a:hover {
             background: rgba(255, 215, 0, 0.2);
-            color: #FFD700;
+            color: #B7791F;
         }
 
         .dropdown:hover .dropdown-content {
@@ -162,7 +163,7 @@
         .mobile-menu-btn span {
             width: 25px;
             height: 3px;
-            background: white;
+            background: #2d3748;
             margin: 3px 0;
             transition: all 0.3s ease;
             border-radius: 2px;
@@ -206,7 +207,7 @@
             right: -100%;
             width: 280px;
             height: 100vh;
-            background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
             z-index: 1000;
             transition: all 0.3s ease;
             padding: 80px 20px 20px;
@@ -228,7 +229,7 @@
 
         .mobile-nav-links > li > a {
             display: block;
-            color: white;
+            color: #2d3748;
             text-decoration: none;
             padding: 15px 20px;
             font-size: 1.1rem;
@@ -241,7 +242,7 @@
         .mobile-nav-links > li > a:hover,
         .mobile-nav-links > li > a.active {
             background: rgba(255, 215, 0, 0.2);
-            color: #FFD700;
+            color: #B7791F;
             border-left-color: #FFD700;
         }
 
@@ -270,7 +271,7 @@
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.3s ease;
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(255, 215, 0, 0.05);
             border-radius: 8px;
             margin-top: 8px;
         }
@@ -281,7 +282,7 @@
 
         .mobile-dropdown-content a {
             display: block;
-            color: #A0AEC0;
+            color: #4A5568;
             text-decoration: none;
             padding: 12px 20px;
             font-size: 1rem;
@@ -290,7 +291,7 @@
         }
 
         .mobile-dropdown-content a:hover {
-            color: #FFD700;
+            color: #B7791F;
             background: rgba(255, 215, 0, 0.1);
             border-left-color: #FFD700;
         }
@@ -365,7 +366,7 @@
         .service-card h3 {
             font-size: 1.5rem;
             margin-bottom: 1rem;
-            color: #000000;
+            color: #2d3748;
             font-weight: 700;
         }
 
@@ -397,7 +398,7 @@
         .cta-button {
             display: inline-block;
             background: #FFD700;
-            color: #000000;
+            color: #2d3748;
             padding: 18px 35px;
             text-decoration: none;
             border-radius: 50px;
@@ -428,7 +429,7 @@
 
         /* Footer */
         footer {
-            background: #0F1419;
+            background: #2d3748;
             color: white;
             padding: 60px 0 30px;
         }
@@ -461,7 +462,7 @@
         .footer-bottom {
             text-align: center;
             padding-top: 2rem;
-            border-top: 1px solid #2D3748;
+            border-top: 1px solid #4A5568;
             color: #718096;
         }
 
@@ -621,6 +622,11 @@
                     <h3>Electrical Inspections</h3>
                     <p>Comprehensive electrical safety inspections, code compliance assessments, and troubleshooting to ensure your electrical systems operate safely.</p>
                 </div>
+                    <div class="service-card fade-in">
+                    <div class="service-icon">⚙️</div>
+                    <h3>Industrian Electrical</h3>
+                    <p>Reliable industrial electrical installation, maintenance, and design-build services for manufacturing plants, warehouses, and large-scale production facilities.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -631,7 +637,7 @@
             <h2 class="cta-title">Ready to Get Started?</h2>
             <p class="cta-text">Contact us today for a free consultation and estimate on your electrical project.</p>
             <a href="contact.html" class="cta-button">Get Free Estimate</a>
-            <a href="tel:+1234567890" class="cta-button cta-secondary">Call (423) 555-SATT</a>
+            <a href="tel:+1234567890" class="cta-button cta-secondary">Call (423) 314-7859</a>
         </div>
     </section>
 
@@ -641,7 +647,7 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <h4>SATT Electric LLC</h4>
-                    <p>Tennessee's premier electrical contractor providing safe, reliable, and professional electrical services to residential, commercial, and industrial clients.</p>
+                    <p>Tennessee's premier electrical contractor providing safe, reliable, and professional electrical services to commercial and industrial clients.</p>
 
                 </div>
                 <div class="footer-section">
@@ -660,15 +666,13 @@
                 </div>
                 <div class="footer-section">
                     <h4>Contact</h4>
-                    <p>Phone: (423) 555-SATT</p>
-                    <p>Emergency: (423) 555-0911</p>
-                    <p>Email: info@sattelectric.com</p>
-                    <p>Careers: careers@sattelectric.com</p>
-                    <p>Address: 2256 Encompass Dr, Chattanooga, TN 37421</p>
+                    <p>Phone: (423) 314-7859</p>
+                    <p>Emergency: (423) 314-7859</p>
+                    <p>Address: 2256 Encompass Dr Suite B, Chattanooga, TN 37421</p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 SATT Electric LLC. All rights reserved. | Licensed & Insured Electrical Contractor | Tennessee License #12345</p>
+                <p>&copy; 2025 SATT Electric LLC. All rights reserved. | Licensed & Insured Electrical Contractor</p>
             </div>
         </div>
     </footer>

@@ -9,9 +9,6 @@
     <!-- Favicon -->
     <link rel="icon" href="images/SATT logo.png" type="image/png">
     
-    <!-- EmailJS SDK -->
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-    
     <style>
         * {
             margin: 0;
@@ -34,19 +31,20 @@
 
         /* Header & Navigation */
         header {
-            background: linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #2d2d2d 100%);
-            color: white;
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 50%, #e9ecef 100%);
+            color: #2d3748;
             padding: 1rem 0;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
             transition: all 0.3s ease;
+            border-bottom: 3px solid #FFD700;
         }
 
         header.scrolled {
-            background: rgba(0, 0, 0, 0.95);
+            background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
             padding: 0.75rem 0;
         }
@@ -69,14 +67,14 @@
             width: auto;
             margin-right: 15px;
             border-radius: 8px;
-            background: rgba(255,255,255,0.1);
+            background: rgba(255,215,0,0.1);
             padding: 5px;
         }
 
         .logo-text {
             font-size: 1.8rem;
             font-weight: bold;
-            color: white;
+            color: #2d3748;
             text-decoration: none;
             white-space: nowrap;
         }
@@ -93,7 +91,7 @@
         }
 
         .nav-links a {
-            color: white;
+            color: #2d3748;
             text-decoration: none;
             font-weight: 500;
             transition: all 0.3s ease;
@@ -103,12 +101,12 @@
 
         .nav-links a:hover {
             background: rgba(255, 215, 0, 0.2);
-            color: #FFD700;
+            color: #B7791F;
         }
 
         .nav-links a.active {
             background: rgba(255, 215, 0, 0.2);
-            color: #FFD700;
+            color: #B7791F;
         }
 
         /* Dropdown Menu Styles */
@@ -119,9 +117,9 @@
         .dropdown-content {
             display: none;
             position: absolute;
-            background: #000000;
+            background: #ffffff;
             min-width: 200px;
-            box-shadow: 0 8px 16px rgba(0,0,0,0.5);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.15);
             border-radius: 8px;
             top: 100%;
             left: 0;
@@ -130,7 +128,7 @@
         }
 
         .dropdown-content a {
-            color: white;
+            color: #2d3748;
             padding: 12px 16px;
             text-decoration: none;
             display: block;
@@ -139,7 +137,7 @@
 
         .dropdown-content a:hover {
             background: rgba(255, 215, 0, 0.2);
-            color: #FFD700;
+            color: #B7791F;
         }
 
         .dropdown:hover .dropdown-content {
@@ -165,7 +163,7 @@
         .mobile-menu-btn span {
             width: 25px;
             height: 3px;
-            background: white;
+            background: #2d3748;
             margin: 3px 0;
             transition: all 0.3s ease;
             border-radius: 2px;
@@ -209,7 +207,7 @@
             right: -100%;
             width: 280px;
             height: 100vh;
-            background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
             z-index: 1000;
             transition: all 0.3s ease;
             padding: 80px 20px 20px;
@@ -231,7 +229,7 @@
 
         .mobile-nav-links > li > a {
             display: block;
-            color: white;
+            color: #2d3748;
             text-decoration: none;
             padding: 15px 20px;
             font-size: 1.1rem;
@@ -244,7 +242,7 @@
         .mobile-nav-links > li > a:hover,
         .mobile-nav-links > li > a.active {
             background: rgba(255, 215, 0, 0.2);
-            color: #FFD700;
+            color: #B7791F;
             border-left-color: #FFD700;
         }
 
@@ -273,7 +271,7 @@
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.3s ease;
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(255, 215, 0, 0.05);
             border-radius: 8px;
             margin-top: 8px;
         }
@@ -284,7 +282,7 @@
 
         .mobile-dropdown-content a {
             display: block;
-            color: #A0AEC0;
+            color: #4A5568;
             text-decoration: none;
             padding: 12px 20px;
             font-size: 1rem;
@@ -293,7 +291,7 @@
         }
 
         .mobile-dropdown-content a:hover {
-            color: #FFD700;
+            color: #B7791F;
             background: rgba(255, 215, 0, 0.1);
             border-left-color: #FFD700;
         }
@@ -327,124 +325,82 @@
         }
 
         .contact-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 400px;
+        }
+
+        .contact-info {
+            background: rgba(255,255,255,0.95);
+            color: #2d3748;
+            padding: 4rem;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,215,0,0.3);
+            max-width: 800px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
         }
 
         .contact-info h3 {
-            font-size: 2rem;
-            margin-bottom: 2rem;
-            color: #F59E0B;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #B7791F;
+        }
+
+        .contact-items-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
         }
 
         .contact-item {
             display: flex;
             align-items: center;
             gap: 15px;
-            margin-bottom: 2rem;
             font-size: 1.1rem;
+            padding: 1.5rem;
+            background: rgba(255,215,0,0.05);
+            border-radius: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            background: rgba(255,215,0,0.1);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
         }
 
         .contact-icon {
-            font-size: 1.5rem;
+            font-size: 2rem;
             color: #FFD700;
+            min-width: 40px;
         }
 
-        .contact-form {
-            background: rgba(255,255,255,0.1);
-            padding: 3rem;
-            border-radius: 20px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.1);
+        .contact-item-content {
+            text-align: left;
         }
 
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1rem;
+        .service-areas {
+            background: rgba(255,215,0,0.05);
+            padding: 2rem;
+            border-radius: 15px;
+            margin-top: 2rem;
+        }
+
+        .service-areas h4 {
+            font-size: 1.5rem;
+            color: #B7791F;
             margin-bottom: 1rem;
         }
 
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            color: #FFD700;
-            font-weight: 600;
-        }
-
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            width: 100%;
-            padding: 15px;
-            border: none;
-            border-radius: 10px;
-            background: rgba(255,255,255,0.9);
-            font-size: 1rem;
-            transition: all 0.3s ease;
-        }
-
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            outline: none;
-            background: white;
-            box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.3);
-        }
-
-        .submit-btn {
-            background: #FFD700;
-            color: #000000;
-            padding: 15px 40px;
-            border: none;
-            border-radius: 50px;
-            font-weight: bold;
+        .service-areas p {
             font-size: 1.1rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            width: 100%;
-        }
-
-        .submit-btn:hover {
-            background: #FFC107;
-            transform: translateY(-2px);
-        }
-
-        .submit-btn:disabled {
-            background: #ccc;
-            cursor: not-allowed;
-            transform: none;
-        }
-
-        /* Status Message */
-        .status-message {
-            padding: 15px;
-            border-radius: 10px;
-            margin-top: 20px;
-            display: none;
-            animation: fadeIn 0.5s ease;
-        }
-
-        .status-message.success {
-            background: rgba(72, 187, 120, 0.2);
-            color: #48BB78;
-            border: 1px solid #48BB78;
-        }
-
-        .status-message.error {
-            background: rgba(245, 101, 101, 0.2);
-            color: #F56565;
-            border: 1px solid #F56565;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-10px); }
-            to { opacity: 1; transform: translateY(0); }
+            line-height: 1.8;
+            color: #4A5568;
         }
 
         /* Map Section */
@@ -456,7 +412,7 @@
 
         .map-title {
             font-size: 2.5rem;
-            color: #000000;
+            color: #2d3748;
             text-align: center;
             margin-bottom: 0.5rem;
             font-weight: 700;
@@ -486,7 +442,7 @@
 
         /* Footer */
         footer {
-            background: #0F1419;
+            background: #2d3748;
             color: white;
             padding: 60px 0 30px;
         }
@@ -519,7 +475,7 @@
         .footer-bottom {
             text-align: center;
             padding-top: 2rem;
-            border-top: 1px solid #2D3748;
+            border-top: 1px solid #4A5568;
             color: #718096;
         }
 
@@ -566,12 +522,21 @@
                 font-size: 2.5rem;
             }
 
-            .contact-content {
+            .contact-info {
+                padding: 2rem;
+            }
+
+            .contact-items-grid {
                 grid-template-columns: 1fr;
             }
 
-            .form-row {
-                grid-template-columns: 1fr;
+            .contact-item {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .contact-item-content {
+                text-align: center;
             }
 
             .mobile-nav {
@@ -665,76 +630,39 @@
             <div class="contact-content">
                 <div class="contact-info fade-in">
                     <h3>Contact Information</h3>
-                    <div class="contact-item">
-                        <span class="contact-icon">📞</span>
-                        <div>
-                            <div><strong>Phone:</strong> (423) 555-SATT</div>
-                            <div>Emergency Line: (423) 555-0911</div>
+                    <div class="contact-items-grid">
+                        <div class="contact-item">
+                            <span class="contact-icon">📞</span>
+                            <div class="contact-item-content">
+                                <div><strong>Phone:</strong> (423) 314-7859</div>
+                                <div>Emergency Line: (423) 314-7859</div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="contact-item">
-                        <span class="contact-icon">📧</span>
-                        <div><strong>Email:</strong> info@sattelectric.com</div>
-                    </div>
-                    <div class="contact-item">
-                        <span class="contact-icon">📍</span>
-                        <div><strong>Address:</strong> 2256 Encompass Dr, Chattanooga, TN 37421</div>
-                    </div>
-                    <div class="contact-item">
-                        <span class="contact-icon">🕒</span>
-                        <div>
-                            <div><strong>Hours:</strong> Mon-Fri 7AM-6PM</div>
-                            <div><strong>Emergency:</strong> 24/7 Available</div>
+                        <div class="contact-item">
+                            <span class="contact-icon">📧</span>
+                            <div class="contact-item-content">
+                                <div><strong>Email:</strong> info@sattelectric.com</div>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">📍</span>
+                            <div class="contact-item-content">
+                                <div><strong>Address:</strong> 2256 Encompass Dr Suite B, Chattanooga, TN 37421</div>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">🕒</span>
+                            <div class="contact-item-content">
+                                <div><strong>Hours:</strong> Mon-Fri 7:00AM-4:30PM</div>
+                                <div><strong>Emergency:</strong> 24/7 Available</div>
+                            </div>
                         </div>
                     </div>
                     
-                    <h3 style="margin-top: 2rem;">Service Areas</h3>
-                    <p>We proudly serve residential, commercial, and industrial clients throughout Tennessee with prompt, professional electrical services.</p>
-                </div>
-                <div class="contact-form fade-in">
-                    <h3>Request Your Free Estimate</h3>
-                    <form id="contactForm">
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="firstName">First Name</label>
-                                <input type="text" id="firstName" name="firstName" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="lastName">Last Name</label>
-                                <input type="text" id="lastName" name="lastName" required>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="email">Email</label>
-                                <input type="email" id="email" name="email" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="phone">Phone</label>
-                                <input type="tel" id="phone" name="phone" required>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="service">Service Needed</label>
-                            <select id="service" name="service" required>
-                                <option value="">Select a Service</option>
-                                <option value="residential">Residential Electrical</option>
-                                <option value="commercial">Commercial Electrical</option>
-                                <option value="industrial">Industrial Electrical</option>
-                                <option value="emergency">Emergency Repair</option>
-                                <option value="panel">Panel Upgrade</option>
-                                <option value="lighting">LED Lighting</option>
-                                <option value="inspection">Electrical Inspection</option>
-                                <option value="other">Other</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Project Description</label>
-                            <textarea id="message" name="message" rows="4" placeholder="Tell us about your electrical project..." required></textarea>
-                        </div>
-                        <button type="submit" class="submit-btn" id="submitBtn">Send Request</button>
-                        <div id="statusMessage" class="status-message"></div>
-                    </form>
+                    <div class="service-areas">
+                        <h4>Service Areas</h4>
+                        <p>We proudly serve commercial, industrial, and institutional clients throughout Tennessee with prompt, professional electrical services.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -744,7 +672,7 @@
     <section class="map-section">
         <div class="container">
             <h3 class="map-title">Our Location</h3>
-            <p class="map-subtitle">2256 Encompass Dr, Chattanooga, TN 37421</p>
+            <p class="map-subtitle">2256 Encompass Dr Suite B, Chattanooga, TN 37421</p>
         </div>
         <div class="map-container">
             <iframe 
@@ -766,12 +694,10 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <h4>SATT Electric LLC</h4>
-                    <p>Tennessee's premier electrical contractor providing safe, reliable, and professional electrical services to residential, commercial, and industrial clients.</p>
-
+                    <p>Tennessee's premier electrical contractor providing safe, reliable, and professional electrical services to commercial and industrial clients.</p>
                 </div>
                 <div class="footer-section">
                     <h4>Services</h4>
-                    <a href="services.html">Residential Electrical</a>
                     <a href="services.html">Commercial Electrical</a>
                     <a href="services.html">Industrial Electrical</a>
                     <a href="services.html">Emergency Repairs</a>
@@ -787,25 +713,18 @@
                 </div>
                 <div class="footer-section">
                     <h4>Contact</h4>
-                    <p>Phone: (423) 555-SATT</p>
-                    <p>Emergency: (423) 555-0911</p>
-                    <p>Email: info@sattelectric.com</p>
-                    <p>Careers: careers@sattelectric.com</p>
-                    <p>Address: 2256 Encompass Dr, Chattanooga, TN 37421</p>
+                    <p>Phone: (423) 314-7859</p>
+                    <p>Emergency: (423) 314-7859</p>
+                    <p>Address: 2256 Encompass Dr Suite B, Chattanooga, TN 37421</p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 SATT Electric LLC. All rights reserved. | Licensed & Insured Electrical Contractor | Tennessee License #12345</p>
+                <p>&copy; 2025 SATT Electric LLC. All rights reserved. | Licensed & Insured Electrical Contractor</p>
             </div>
         </div>
     </footer>
 
     <script>
-        // Initialize EmailJS with your public key
-        (function() {
-            emailjs.init('y-yppH-cfrV0fMx8v'); // Replace with your actual EmailJS public key
-        })();
-
         // Mobile Menu Functionality
         document.addEventListener('DOMContentLoaded', function() {
             const mobileMenuBtn = document.getElementById('mobileMenuBtn');
@@ -866,65 +785,6 @@
                 header.classList.remove('scrolled');
             }
         });
-
-        // Contact form handling with EmailJS
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const submitBtn = document.getElementById('submitBtn');
-            const statusMessage = document.getElementById('statusMessage');
-            const formData = new FormData(this);
-            const data = Object.fromEntries(formData);
-            
-            // Client-side validation
-            if (!data.firstName || !data.lastName || !data.email || !data.phone || !data.service || !data.message) {
-                showStatusMessage('Please fill in all required fields.', 'error');
-                return;
-            }
-            
-            // Email validation
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailRegex.test(data.email)) {
-                showStatusMessage('Please enter a valid email address.', 'error');
-                return;
-            }
-            
-            // Show loading state
-            submitBtn.disabled = true;
-            submitBtn.textContent = 'Sending...';
-            statusMessage.style.display = 'none';
-            
-            // Send email using EmailJS
-            emailjs.sendForm('service_z9095xc', 'template_504f7k4', this)
-                .then(function(response) {
-                    console.log('SUCCESS!', response.status, response.text);
-                    showStatusMessage('Thank you for your request! We\'ll contact you within 24 hours with your free estimate.', 'success');
-                    document.getElementById('contactForm').reset();
-                }, function(error) {
-                    console.log('FAILED...', error);
-                    showStatusMessage('Sorry, there was an error sending your message. Please try again or call us directly at (423) 555-SATT.', 'error');
-                })
-                .finally(function() {
-                    // Reset button state
-                    submitBtn.disabled = false;
-                    submitBtn.textContent = 'Send Request';
-                });
-        });
-
-        // Show status message function
-        function showStatusMessage(message, type) {
-            const statusMessage = document.getElementById('statusMessage');
-            statusMessage.textContent = message;
-            statusMessage.className = `status-message ${type}`;
-            statusMessage.style.display = 'block';
-            
-            // Auto-hide success messages after 5 seconds
-            if (type === 'success') {
-                setTimeout(() => {
-                    statusMessage.style.display = 'none';
-                }, 5000);
-            }
-        }
 
         // Fade in animation on scroll
         function fadeInOnScroll() {
