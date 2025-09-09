@@ -573,35 +573,7 @@
             color: #FFD700;
         }
 
-        /* Emergency Banner */
-        .emergency-banner {
-            background: linear-gradient(90deg, #DC2626, #B91C1C);
-            color: white;
-            text-align: center;
-            padding: 15px 0;
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1002;
-            font-weight: bold;
-            transform: translateY(-100%);
-            transition: transform 0.3s ease;
-            box-shadow: 0 4px 20px rgba(220, 38, 38, 0.3);
-        }
 
-        .emergency-banner.show {
-            transform: translateY(0);
-        }
-
-        .emergency-banner a {
-            color: white;
-            text-decoration: none;
-            font-size: 1.2rem;
-        }
-
-        .emergency-banner a:hover {
-            text-decoration: underline;
-        }
 
         /* Mobile Responsive Design */
         @media (max-width: 768px) {
@@ -705,15 +677,6 @@
                 text-align: center;
             }
 
-            /* Emergency Banner Mobile */
-            .emergency-banner {
-                font-size: 0.9rem;
-                padding: 12px 0;
-            }
-
-            .emergency-banner a {
-                font-size: 1rem;
-            }
         }
 
         /* Small Mobile Devices */
@@ -757,10 +720,6 @@
     </style>
 </head>
 <body>
-    <!-- Emergency Banner -->
-    <div class="emergency-banner" id="emergencyBanner">
-        🚨 24/7 Emergency Electrical Service Available - <a href="tel:+1234567890">(423) 314-7859</a>
-    </div>
 
     <!-- Mobile Navigation Overlay -->
     <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
